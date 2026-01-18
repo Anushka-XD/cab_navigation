@@ -167,8 +167,8 @@ class CabNavigationCLI:
             # Display comparison using rich table
             self._display_comparison(comparison)
             
-            # Ask if user wants to book
-            book_choice = input("\n🎯 Book the cheapest ride? (yes/no): ").strip().lower()
+            # Show recommendation
+            print(f"\n✅ RECOMMENDED: Book {comparison.cheapest_app.upper()} at ₹{comparison.cheapest_price}")
             
             if book_choice in ['yes', 'y']:
                 print(f"\n📱 Booking on {comparison.cheapest_app.upper()}...")
@@ -207,7 +207,15 @@ async def main():
 
 def run_sync():
     """Synchronous wrapper for running from command line."""
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\n\n👋 Exiting gracefully...")
+        return
+    except Exception as e:
+        logger.error(f"Unexpected error: {str(e)}", exc_info=True)
+        print(f"\n❌ Unexpected error: {str(e)}")
+        return
 
 
 if __name__ == "__main__":
