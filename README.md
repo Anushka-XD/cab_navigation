@@ -187,8 +187,6 @@ Each app agent inherits from `BaseCabAgent`:
 
 1. **Open App** - Launch the cab service
 2. **Get Price** - Extract fare estimates using Droidrun + Pydantic structured output
-3. **Book Ride** - Complete the booking workflow
-4. **Close App** - Clean shutdown
 
 App-specific agents override goal builders to handle UI differences.
 
@@ -226,19 +224,6 @@ async def book_ride():
     )
     
     print(comparison.comparison_summary)
-    
-    # Book cheapest
-    booking = await orchestrator.book_cheapest(
-        pickup_location="Times Square",
-        destination="Airport",
-        preferences=prefs,
-        comparison=comparison
-    )
-    
-    if booking:
-        print(f"Booked on {booking.app_name}: {booking.booking_id}")
-
-asyncio.run(book_ride())
 ```
 
 ### Extending for New Apps
@@ -362,7 +347,6 @@ For production use:
 - API keys never logged (use environment variables)
 - Device credentials handled securely by Droidrun
 - User preferences stored only in memory
-- Booking IDs should be stored securely in production
 
 ## Contributing
 
