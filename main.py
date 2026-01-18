@@ -168,28 +168,7 @@ class CabNavigationCLI:
             self._display_comparison(comparison)
             
             # Show recommendation
-            print(f"\n✅ RECOMMENDED: Book {comparison.cheapest_app.upper()} at ₹{comparison.cheapest_price}")
-            
-            if book_choice in ['yes', 'y']:
-                print(f"\n📱 Booking on {comparison.cheapest_app.upper()}...")
-                
-                booking = await asyncio.wait_for(
-                    self.orchestrator.book_cheapest(
-                        pickup_location,
-                        destination,
-                        preferences,
-                        comparison
-                    ),
-                    timeout=BOOKING_TIMEOUT
-                )
-                
-                if booking:
-                    print(self.orchestrator.get_last_booking_summary())
-                    print("\n✅ Your ride is confirmed! Driver is on the way.")
-                else:
-                    print("\n❌ Failed to complete booking. Please try again.")
-            else:
-                print("\n↪️  Booking cancelled.")
+            print(f"\n✅ CHEAPEST OPTION: {comparison.cheapest_app.upper()} at ₹{comparison.cheapest_price}")
         
         except asyncio.TimeoutError:
             print("\n⏱️  Request timed out. Please try again.")

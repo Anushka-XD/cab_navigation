@@ -45,7 +45,7 @@ class BaseCabAgent(ABC):
             agent = DroidAgent(
                 goal=goal,
                 config=self.config,
-                timeout=90  # Increased from 30 to allow for device init and LLM inference
+                timeout=120  # Increased from 30 to allow for device init and LLM inference
             )
             
             result = await agent.run()
@@ -86,11 +86,17 @@ class BaseCabAgent(ABC):
             
             goal = self._build_price_goal(pickup_location, destination, preferences)
             
+            # Increase timeout for Rapido and Uber since they're slower
+            if self.app_name.lower() in ['rapido', 'uber']:
+                timeout = 240
+            else:
+                timeout = 180
+            
             agent = DroidAgent(
                 goal=goal,
                 config=self.config,
                 output_model=PriceInfo,
-                timeout=180  # Increased from 120 for destination entry and navigation
+                timeout=timeout  # Increased from 120 for destination entry and navigation
             )
             
             result = await agent.run()

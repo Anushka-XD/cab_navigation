@@ -11,7 +11,7 @@
 ### 1️⃣ Set Environment Variable
 
 ```bash
-export GOOGLE_API_KEY=AIzaSyAgmAmBrQfVOHgM41RDbpUNA6E8PLFgFBE
+export GOOGLE_API_KEY="your gemini key"
 ```
 
 ### 2️⃣ Create Virtual Environment

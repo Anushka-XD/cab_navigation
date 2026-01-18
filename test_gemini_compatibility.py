@@ -7,7 +7,7 @@ from pydantic import BaseModel
 import json
 
 # Set API key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAgmAmBrQfVOHgM41RDbpUNA6E8PLFgFBE"
+os.environ["GOOGLE_API_KEY"] = "your gemini key"
 
 # Import models
 sys.path.insert(0, '/Users/anushka/cab_navigation')

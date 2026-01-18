@@ -5,7 +5,7 @@ from pathlib import Path
 from droidrun import DroidrunConfig
 
 # Set API key before Droidrun initializes
-os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY", "AIzaSyAgmAmBrQfVOHgM41RDbpUNA6E8PLFgFBE")
+os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY", "YOUR GEMINI KEY")
 
 # Project root
 PROJECT_ROOT = Path(__file__).parent

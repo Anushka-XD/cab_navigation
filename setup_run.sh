@@ -12,7 +12,7 @@ echo ""
 
 # 1. Set the API key
 echo "📝 Step 1: Setting Google API Key..."
-export GOOGLE_API_KEY=AIzaSyAgmAmBrQfVOHgM41RDbpUNA6E8PLFgFBE
+export GOOGLE_API_KEY="your gemini key"
 echo "✓ API Key set"
 echo ""
 
