@@ -1,12 +1,12 @@
 # Cab Navigation System - Production-Ready Agent
 
-An intelligent, modular Python system that automatically compares cab fares across multiple apps (Uber, Ola, Rapido) and books the cheapest option.
+An intelligent, modular Python system that automatically compares cab fares across multiple apps (Uber, Ola, Rapido) and displays the cheapest option.
 
 ## Features
 
 ✅ **Multi-App Price Comparison** - Simultaneously fetch and compare prices from Uber, Ola, and Rapido
 ✅ **Natural Language Processing** - Parse user requests like "Go to airport as rickshaw"
-✅ **Automatic Booking** - Books the cheapest ride with a single command
+✅ **Price Analysis** - Identifies and displays the cheapest ride option
 ✅ **Modular Architecture** - Each app has its own agent, easy to extend
 ✅ **Structured Data Extraction** - Uses Pydantic models for type-safe data
 ✅ **Production Ready** - Comprehensive error handling, logging, and configuration
@@ -118,18 +118,7 @@ python main.py
 
 ==================================================
 ✅ Cheapest Option: OLA (₹450)
-
-🎯 Book the cheapest ride? (yes/no): yes
-
-📱 Booking on OLA...
-✅ Ride Booked Successfully!
-   App: Ola
-   Booking ID: OLA123456789
-   Ride Type: Ola Auto
-   Fare: ₹450
-   Driver: Rajesh Kumar (4.8⭐)
-   ETA: 4 mins
-   Vehicle: DL01AB1234, White Auto
+💡 You save ₹30 (6.7%) by choosing OLA!
 ```
 
 ## Supported Ride Types
@@ -191,12 +180,6 @@ Edit `config.py` to customize:
 - estimated_time
 - distance
 - extra_charges
-
-**BookingInfo** - Confirmation data
-- booking_id
-- driver details
-- vehicle info
-- estimated fare & arrival
 
 ### Agent Pattern
 
