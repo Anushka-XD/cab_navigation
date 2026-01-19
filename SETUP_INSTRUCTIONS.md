@@ -95,7 +95,7 @@ Once running, enter commands like:
 
 ```bash
 # Solution: Set the API key before running
-export GOOGLE_API_KEY=AIzaSyAgmAmBrQfVOHgM41RDbpUNA6E8PLFgFBE
+export GOOGLE_API_KEY=your_gemini_key
 python main.py
 ```
 
